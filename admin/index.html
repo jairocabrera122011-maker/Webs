@@ -1,1 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <title>
+        Burger Jairo | Administración
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================= -->
+    <!--                    LOGIN                          -->
+    <!-- ================================================= -->
+
+    <section
+        class="login-screen"
+        id="loginScreen"
+    >
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                🍔
+            </div>
+
+            <h1>
+                Burger Jairo
+            </h1>
+
+            <p>
+                Panel de administración
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="adminEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        placeholder="admin@burgerjairo.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="adminPassword">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="••••••••"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    🔐 Entrar
+                </button>
+
+
+                <p
+                    id="loginMessage"
+                    class="message"
+                ></p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!--                 PANEL PRINCIPAL                   -->
+    <!-- ================================================= -->
+
+    <div
+        class="admin-app"
+        id="adminApp"
+    >
+
+
+        <!-- ================================================= -->
+        <!--                    SIDEBAR                        -->
+        <!-- ================================================= -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+            <div class="sidebar-logo">
+
+                <span>
+                    🍔
+                </span>
+
+                <div>
+
+                    <strong>
+                        Burger Jairo
+                    </strong>
+
+                    <small>
+                        Administración
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVEGACIÓN -->
+
+            <nav class="admin-navigation">
+
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard"
+                >
+                    <span>📊</span>
+                    Dashboard
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="products"
+                >
+                    <span>🍔</span>
+                    Productos
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="categories"
+                >
+                    <span>📂</span>
+                    Categorías
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="offers"
+                >
+                    <span>🏷️</span>
+                    Ofertas
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="orders"
+                >
+                    <span>🛒</span>
+                    Pedidos
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="reservations"
+                >
+                    <span>📅</span>
+                    Reservas
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="customers"
+                >
+                    <span>👥</span>
+                    Clientes
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="reviews"
+                >
+                    <span>⭐</span>
+                    Reseñas
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="messages"
+                >
+                    <span>💬</span>
+                    Mensajes
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="gallery"
+                >
+                    <span>🖼️</span>
+                    Galería
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="settings"
+                >
+                    <span>⚙️</span>
+                    Configuración
+                </button>
+
+
+            </nav>
+
+
+            <!-- PARTE INFERIOR -->
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="../index.html"
+                    class="view-website"
+                >
+                    🌐 Ver web
+                </a>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    🚪 Cerrar sesión
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================================= -->
+        <!--                  CONTENIDO                        -->
+        <!-- ================================================= -->
+
+        <main class="admin-main">
+
+
+            <!-- ================================================= -->
+            <!--                    TOPBAR                         -->
+            <!-- ================================================= -->
+
+            <header class="topbar">
+
+                <button
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                >
+                    ☰
+                </button>
+
+
+                <div class="topbar-title">
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Gestiona tu restaurante
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        id="adminThemeButton"
+                        class="icon-button"
+                    >
+                        🌙
+                    </button>
+
+
+                    <button
+                        class="notification-button"
+                        id="notificationButton"
+                    >
+
+                        🔔
+
+                        <span>
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <div class="admin-profile">
+
+                        <div class="profile-avatar">
+                            J
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Jairo
+                            </strong>
+
+                            <small>
+                                Administrador
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================================= -->
+            <!--                   DASHBOARD                       -->
+            <!-- ================================================= -->
+
+            <section
+                class="admin-section active"
+                id="dashboard"
+            >
+
+
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span>
+                            👋 BIENVENIDO
+                        </span>
+
+                        <h2>
+                            Hola, Jairo
+                        </h2>
+
+                        <p>
+                            Aquí tienes un resumen de
+                            Burger Jairo.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-icon">
+                        🍔
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADÍSTICAS -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Ventas de hoy
+                            </span>
+
+                            <strong>
+                                248,50 €
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 12,5%
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            🛒
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Pedidos
+                            </span>
+
+                            <strong>
+                                32
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 8,2%
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Reservas
+                            </span>
+
+                            <strong>
+                                14
+                            </strong>
+
+                            <small>
+                                Hoy
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            👥
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Clientes
+                            </span>
+
+                            <strong>
+                                1.284
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 5,7%
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- DOS COLUMNAS -->
+
+                <div class="dashboard-grid">
+
+
+                    <!-- PEDIDOS RECIENTES -->
+
+                    <div class="panel-card">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Pedidos recientes
+                                </h3>
+
+                                <p>
+                                    Últimos pedidos recibidos
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-section-link="orders"
+                            >
+                                Ver todos
+                            </button>
+
+                        </div>
+
+
+                        <div class="table-container">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Pedido
+                                        </th>
+
+                                        <th>
+                                            Cliente
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                        <th>
+                                            Estado
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <td>
+                                            #BJ-1042
+                                        </td>
+
+                                        <td>
+                                            Carlos M.
+                                        </td>
+
+                                        <td>
+                                            22,50 €
+                                        </td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Preparando
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            #BJ-1041
+                                        </td>
+
+                                        <td>
+                                            Laura G.
+                                        </td>
+
+                                        <td>
+                                            15,00 €
+                                        </td>
+
+                                        <td>
+                                            <span class="status completed">
+                                                Completado
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            #BJ-1040
+                                        </td>
+
+                                        <td>
+                                            David R.
+                                        </td>
+
+                                        <td>
+                                            31,90 €
+                                        </td>
+
+                                        <td>
+                                            <span class="status delivery">
+                                                En reparto
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESERVAS -->
+
+                    <div class="panel-card">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Próximas reservas
+                                </h3>
+
+                                <p>
+                                    Reservas de hoy
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-section-link="reservations"
+                            >
+                                Ver todas
+                            </button>
+
+                        </div>
+
+
+                        <div class="reservation-list">
+
+
+                            <div class="reservation-item">
+
+                                <div class="reservation-time">
+                                    13:30
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Ana López
+                                    </strong>
+
+                                    <span>
+                                        4 personas
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reservation-item">
+
+                                <div class="reservation-time">
+                                    15:00
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Marcos P.
+                                    </strong>
+
+                                    <span>
+                                        2 personas
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="reservation-item">
+
+                                <div class="reservation-time">
+                                    20:30
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Sara G.
+                                    </strong>
+
+                                    <span>
+                                        6 personas
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTOS MÁS VENDIDOS -->
+
+                <div class="panel-card">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>
+                                Productos más vendidos
+                            </h3>
+
+                            <p>
+                                Rendimiento de tus productos
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="popular-products">
+
+
+                        <div class="popular-product">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80"
+                                alt="Burger Jairo"
+                            >
+
+                            <div>
+
+                                <strong>
+                                    Burger Jairo
+                                </strong>
+
+                                <span>
+                                    148 vendidos
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                8,00 €
+                            </strong>
+
+                        </div>
+
+
+                        <div class="popular-product">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80"
+                                alt="Cheeseburger"
+                           
